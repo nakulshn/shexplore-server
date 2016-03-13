@@ -1,0 +1,10 @@
+ul.main_nav
+  li
+    a(href='/') Home
+    a(href='/discuss') Discuss
+    
+ul.login
+  li
+    if logged_in
+      img(src='#{user.avatar}')
+      p #{user.username}

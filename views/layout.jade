@@ -2,6 +2,19 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/stylesheet.css')
+    link(rel='stylesheet', href='/stylesheets/normalize.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Exo+2:400,500')
   body
-    block content
+    header
+      h1 
+        a(href='/') Shexplore
+      
+      nav
+        include partials/_nav
+      
+    section#body
+      block content
+
+    footer
+      p &copy;2016 Shexplore
