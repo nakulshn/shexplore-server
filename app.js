@@ -8,7 +8,19 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-var app = express();
+var knex = require('knex')({
+  client: 'pg',
+  connection: {
+    host     : '209.237.254.55',
+    user     : 'postgres',
+    password : 'postgres',
+    database : 'shex',
+    charset  : 'utf8'
+  }
+});
+var Bookshelf = require('bookshelf');
+
+var bookshelf = Bookshelf(knex);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,6 +33,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(function(req,res,next){
+    req.db = bookshelf;
+    next();
+});
 
 app.use('/', routes);
 app.use('/users', users);
