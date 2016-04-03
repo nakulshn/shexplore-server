@@ -1,0 +1,5 @@
+{
+  "client": "sqlite3",
+  "connection": {
+    "filename": "./dev.db.sqlite"
+}
