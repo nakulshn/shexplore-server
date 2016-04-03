@@ -8,16 +8,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-var knex = require('knex')({
-  client: 'pg',
-  connection: {
-    host     : '209.237.254.55',
-    user     : 'postgres',
-    password : 'postgres',
-    database : 'shex',
-    charset  : 'utf8'
-  }
-});
+var knex = require('knex')(require("./settings/db"));
 var Bookshelf = require('bookshelf');
 
 var bookshelf = Bookshelf(knex);
