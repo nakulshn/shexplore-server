@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-var knex = require('knex')(require("./settings/db"));
+var knex = require('knex')(require("./app/settings/db"));
 var Bookshelf = require('bookshelf');
 
 var bookshelf = Bookshelf(knex);
