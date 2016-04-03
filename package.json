@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "clean": "cd public/js && rm -f frontend.min.js && rm -f frontend.js && cd ../css && rm -f application.css && rm -f stylesheet.css && rm -f application.min.css",
+    "gulp": "./node_modules/gulp/bin/gulp.js"
   },
   "dependencies": {
     "babel-runtime": "^6.6.1",
@@ -17,5 +19,16 @@
     "morgan": "~1.6.1",
     "pg": "^4.5.1",
     "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-stylus": "^2.3.1",
+    "gulp-uglify": "^1.5.3",
+    "gulp-uglifycss": "^1.0.6"
   }
 }
