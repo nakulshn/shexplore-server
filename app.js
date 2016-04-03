@@ -8,11 +8,11 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+var Bookshelf = require('bookshelf');
 var bookshelf = Bookshelf(knex);
 var app = express();
 
-var knex = require('knex')(app.get('env') == "development" ? require("./settings/db.dev.json") : require("./settings/db"));
-var Bookshelf = require('bookshelf');
+var knex = require('knex')(app.get('env') == "development" ? require("./app/settings/db.dev.json") : require("./app/settings/db"));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
