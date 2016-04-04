@@ -3,16 +3,11 @@
 var express = require('express');
 var router = express.Router();
 
-var projects = [];
-
-/* GET home page. */
+/* GET discuss page. */
 router.get('/', function (req, res, next) {
-  res.render('index', {
-    title: 'Home',
-    projects: projects
+  res.render('discuss', {
+    title: 'Discuss'
   });
 });
-
-router.use('/discuss', require('./discuss'))
 
 module.exports = router;
